@@ -1,0 +1,46 @@
+{
+  "name": "taskoko",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hello-pangea/dnd": "^18.0.1",
+    "@tanstack/react-form": "^0.42.0",
+    "@tanstack/react-query": "^5.66.7",
+    "@tanstack/react-query-devtools": "^5.66.7",
+    "globals": "^15.15.0",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.3",
+    "typescript-eslint": "^8.24.1",
+    "zod": "^3.24.2",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.20.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "eslint-plugin-perfectionist": "^4.9.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "prettier": "3.5.1",
+    "typescript": "^5"
+  },
+  "description": "kanban app",
+  "repository": "https://github.com/Huki4n/taskoko.git",
+  "author": "hukki",
+  "license": "MIT"
+}
