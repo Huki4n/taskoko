@@ -1,6 +1,11 @@
+import { Icon } from "@/shared/ui"
+
 export const Logo = () => {
   return (
-      <div>
-      </div>
+      <Icon
+          src={'/assets/logo.svg'}
+          alt={'Logo'}
+          size={[125, 48]}
+      />
   )
 }

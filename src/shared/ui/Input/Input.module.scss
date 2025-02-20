@@ -1,0 +1,13 @@
+.search {
+  background: none;
+  color: white;
+
+  &:-webkit-autofill {
+    appearance: none;
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+
+  font-size: 14px;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,8 @@
+@use "normalize";
+@use "variables" as *;
+
+
+body {
+  background: $bg;
+  color: white;
+}

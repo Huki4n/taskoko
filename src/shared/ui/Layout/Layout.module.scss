@@ -1,0 +1,16 @@
+@use "@/shared/styles/variables" as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  gap: 52px;
+}
+

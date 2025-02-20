@@ -1,0 +1,18 @@
+@use "@/shared/styles/variables" as *;
+
+.search {
+  border: 1px solid $blue;
+  padding: 11px 20px;
+
+  border-radius: 45px;
+
+  max-width: 300px;
+  width: 25vw;
+}
+
+.form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+}
