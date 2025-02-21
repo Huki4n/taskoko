@@ -1,4 +1,4 @@
-import { QueryClient } from '@tanstack/query-core';
+import { QueryClient } from '@tanstack/query-core'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -6,6 +6,6 @@ export const queryClient = new QueryClient({
       staleTime: 1000 * 60 * 5, // 5 минут
       // retry: 2,
       // retryDelay: 1000 * 2
-    }
-  }
+    },
+  },
 })

@@ -1,8 +1,9 @@
-import type { AppProps } from 'next/app';
-import App from '@/app';
+import type { AppProps } from 'next/app'
 
-import '@/shared/styles/global.scss';
+import App from '@/app'
 
-const MyApp = (props: AppProps) => <App {...props} />;
+import '@/shared/styles/global.scss'
 
-export default MyApp;
+const MyApp = (props: AppProps) => <App {...props} />
+
+export default MyApp

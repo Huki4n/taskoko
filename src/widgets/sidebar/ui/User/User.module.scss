@@ -1,0 +1,59 @@
+@use '@/shared/styles/variables' as *;
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-left: 6px;
+}
+
+.leftSide {
+  --block-size: 110px;
+  --second-line-size: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: var(--block-size);
+  max-height: var(--block-size);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+
+    left: 5px;
+    top: 5px;
+
+    width: var(--second-line-size);
+    height: var(--second-line-size);
+
+    border: 2px solid $blue;
+    border-radius: 100%;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: var(--block-size);
+    height: var(--block-size);
+
+    border: 2px solid $blue;
+    border-radius: 100%;
+  }
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

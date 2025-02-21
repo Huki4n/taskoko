@@ -1,1 +1,5 @@
-export {getAccessToken, removeAccessToken, saveTokenToStorage} from "./tokenStorage"
+export {
+  getAccessToken,
+  removeAccessToken,
+  saveTokenToStorage,
+} from './tokenStorage'

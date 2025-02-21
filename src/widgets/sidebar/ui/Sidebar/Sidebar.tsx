@@ -1,7 +1,15 @@
+import { Navigation } from '../Navigation/Navigation'
+import { Projects } from '../Projects/Projects'
+import { User } from '../User/User'
+
+import s from './Sidebar.module.scss'
+
 export const Sidebar = () => {
   return (
-      <div>
-        <h1>Sidebar</h1>
-      </div>
+    <aside className={s.sidebar}>
+      <User />
+      <Navigation />
+      <Projects />
+    </aside>
   )
 }

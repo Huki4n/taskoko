@@ -8,3 +8,11 @@
   display: flex;
   gap: 24px;
 }
+
+.navItem {
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}

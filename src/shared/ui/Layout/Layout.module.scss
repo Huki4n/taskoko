@@ -1,16 +1,21 @@
-@use "@/shared/styles/variables" as *;
+@use '@/shared/styles/variables' as *;
 
 .layout {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 24px;
 
-  max-width: 1440px;
+  max-width: 1504px;
   margin: 0 auto;
 }
 
 .content {
   display: flex;
-  gap: 52px;
+  gap: 40px;
+
+  padding: 0 32px;
 }
 
+.main {
+  flex-grow: 1;
+}

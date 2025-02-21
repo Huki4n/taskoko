@@ -1,7 +1,7 @@
-export default function Profile(){
+export default function Profile() {
   return (
-      <div>
-        <h1>Profile</h1>
-      </div>
+    <div>
+      <h1>Profile</h1>
+    </div>
   )
 }

@@ -1,3 +1,5 @@
 export { Layout } from './Layout/Layout'
 export { Icon } from './Icon/Icon'
 export { Input } from './Input/Input'
+export { P } from './P/P'
+export { Button } from './Button/Button'

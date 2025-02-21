@@ -1,4 +1,4 @@
-@use "@/shared/styles/variables" as *;
+@use '@/shared/styles/variables' as *;
 
 .search {
   border: 1px solid $blue;
@@ -14,5 +14,4 @@
   display: flex;
   gap: 12px;
   align-items: center;
-
 }

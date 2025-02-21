@@ -1,0 +1,14 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.default {
+  font-size: 18px;
+}

@@ -1,0 +1,47 @@
+@use "@/shared/styles/variables" as *;
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & button {
+    align-self: flex-start;
+  }
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  max-height: 150px;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+}
+
+.listItem {
+  opacity: 0.5;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 16px ;
+
+  border: 2px solid $blue;
+  border-radius: $base-border-radius;
+
+  transition: opacity 0.15s ease-in-out;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.active {
+  opacity: 1;
+}

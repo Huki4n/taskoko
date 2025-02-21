@@ -1,6 +1,3 @@
 export const BoardHeader = () => {
-  return (
-      <div>
-      </div>
-  )
+  return <div></div>
 }

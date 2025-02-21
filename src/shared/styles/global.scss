@@ -1,8 +1,29 @@
-@use "normalize";
-@use "variables" as *;
-
+@use 'normalize';
+@use 'variables' as *;
 
 body {
   background: $bg;
   color: white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  /* ширина скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* цвет фона скроллбара */
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue;
+  /* цвет ползунка */
+  border-radius: 20px;
+  /* закругленные углы */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* цвет ползунка при наведении */
 }
