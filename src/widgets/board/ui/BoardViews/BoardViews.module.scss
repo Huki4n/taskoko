@@ -1,0 +1,16 @@
+.viewList {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.viewItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & p {
+    align-self: flex-end;
+    padding-bottom: 0.25rem;
+  }
+}

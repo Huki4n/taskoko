@@ -1,3 +1,5 @@
+import { Board } from '@/widgets/board'
+
 export default function Dashboard() {
-  return <h1>Dashboard</h1>
+  return <Board />
 }

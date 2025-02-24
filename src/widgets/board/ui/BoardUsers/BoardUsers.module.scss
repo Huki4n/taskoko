@@ -1,0 +1,45 @@
+@use "@/shared/styles/variables" as *;
+
+.boardUsers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.userList {
+  display: flex;
+}
+
+.userItem {
+  max-height: 2.5rem;
+  max-width: 2.5rem;
+  width: 100%;
+  aspect-ratio: 1;
+
+  cursor: pointer;
+
+  padding: 4px;
+
+  background: black;
+  border: 2px solid white;
+  border-radius: 100%;
+
+  margin-left: -0.6rem;
+}
+
+.moreCountUsers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+  border: 2px solid $blue;
+
+  margin-left: -0.6rem;
+  aspect-ratio: 1;
+
+  & p {
+    color: $blue
+  }
+}

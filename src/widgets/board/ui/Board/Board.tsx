@@ -1,3 +1,15 @@
+import { BoardUsers } from '../BoardUsers/BoardUsers'
+import { BoardViews } from '../BoardViews/BoardViews'
+
+import s from './Board.module.scss'
+
 export const Board = () => {
-  return <div></div>
+  return (
+    <section className={s.board}>
+      <div className={s.boardHeader}>
+        <BoardViews />
+        <BoardUsers />
+      </div>
+    </section>
+  )
 }
