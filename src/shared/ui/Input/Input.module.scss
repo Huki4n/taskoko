@@ -1,6 +1,6 @@
-.search {
+.input {
+  color: black;
   background: none;
-  color: white;
 
   &:-webkit-autofill {
     appearance: none;
@@ -9,5 +9,23 @@
   }
 
   font-size: 14px;
+}
+
+.search {
+  color: white;
   padding-bottom: 2px;
 }
+
+.auth {
+}
+
+.label {
+  padding-left: 0.5rem;
+
+  &-auth {
+    color: black;
+  }
+}
+
+
+

@@ -1,19 +1,13 @@
-import Cookies from 'js-cookie'
-
 export const getAccessToken = () => {
-  const accessToken = Cookies.get('accessToken')
+  const accessToken = localStorage.getItem('accessToken')
 
   return accessToken || null
 }
 
-export const saveTokenToStorage = (accessToken: string) => {
-  Cookies.set('accessToken', accessToken, {
-    domain: 'localhost',
-    sameSite: 'strict',
-    expires: 1,
-  })
+export const saveTokenToStorage = (token: string) => {
+  localStorage.setItem('accessToken', token)
 }
 
 export const removeAccessToken = () => {
-  Cookies.remove('accessToken')
+  localStorage.setItem('accessToken', '')
 }

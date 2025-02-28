@@ -1,0 +1,7 @@
+$small-laptop-width: 1200px;
+
+@mixin small-laptop {
+  @media (max-width: #{$small-laptop-width}) {
+    @content;
+  }
+}

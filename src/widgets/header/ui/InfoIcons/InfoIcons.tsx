@@ -7,12 +7,12 @@ export const InfoIcons = () => {
   return (
     <div className={s.icons}>
       <Icon
-        src={`${ASSETS_ICON_PATH}/comment.svg`}
+        src={`${ASSETS_ICON_PATH}/comment`}
         alt={'comments'}
         size={[26, 30]}
       />
       <Icon
-        src={`${ASSETS_ICON_PATH}/notification.svg`}
+        src={`${ASSETS_ICON_PATH}/notification`}
         alt={'Bell'}
         size={26}
       />

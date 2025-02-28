@@ -25,7 +25,7 @@ export const Navigation = () => {
             >
               <Link href={href} className={s.navLink}>
                 <Icon
-                  src={`${ASSETS_ICON_PATH}/${icon}.svg`}
+                  src={`${ASSETS_ICON_PATH}/${icon}`}
                   size={size}
                   opacity={70}
                 />

@@ -35,7 +35,7 @@ export const BoardUsers = () => {
         {boardUsers.slice(0, 5).map((user, index) => (
           <li key={index} className={s.userItem}>
             <Icon
-              src={`${ASSETS_ICON_PATH}/${user.avatar}.svg`}
+              src={`${ASSETS_ICON_PATH}/${user.avatar}`}
               size={40}
             />
           </li>

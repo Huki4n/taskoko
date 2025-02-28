@@ -1,3 +1,6 @@
+'use client'
+
+import { BoardContent } from '../BoardContent/BoardContent'
 import { BoardUsers } from '../BoardUsers/BoardUsers'
 import { BoardViews } from '../BoardViews/BoardViews'
 
@@ -10,6 +13,8 @@ export const Board = () => {
         <BoardViews />
         <BoardUsers />
       </div>
+
+      <BoardContent />
     </section>
   )
 }

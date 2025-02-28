@@ -1,5 +1,6 @@
 @use 'normalize';
 @use 'variables' as *;
+@use 'breakpoints' as *;
 
 body {
   background: $bg;

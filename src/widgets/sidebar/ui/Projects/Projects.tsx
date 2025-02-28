@@ -39,7 +39,7 @@ export const Projects = () => {
             )}
           >
             <Icon
-              src={`${ASSETS_ICON_PATH}/placeholder_avatar.svg`}
+              src={`${ASSETS_ICON_PATH}/placeholder_avatar`}
               size={22}
             />
             <P type={'bold'} size={'18'}>

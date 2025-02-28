@@ -3,13 +3,11 @@
 .nav {
   border: 2px solid $blue;
   border-radius: $base-border-radius;
-
-  max-width: 300px;
 }
 
 .navList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .navItem {
@@ -17,8 +15,13 @@
   justify-content: center;
   align-items: center;
 
-  width: 148px;
+  max-width: 148px;
+  min-width: 80px;
+
+  width: 100%;
+
   height: 100px;
+
 }
 
 .navLink {

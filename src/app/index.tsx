@@ -5,7 +5,6 @@ import NextNProgress from 'nextjs-progressbar'
 import { ToastContainer } from 'react-toastify'
 
 import { QueryProvider } from '@/app/providers/query-provider'
-import { Layout } from '@/shared/ui'
 
 export default function MyApp({
   Component,
@@ -19,17 +18,21 @@ export default function MyApp({
           name={'description'}
           content={'The best kanban app'}
         />
+        <link
+          rel={'prefetch'}
+          href={'http://localhost:8080'}
+        />
+        <link
+          rel={'preconnect'}
+          href={'http://localhost:8080'}
+        />
       </Head>
       <NextNProgress
         color={'var(--color-primary)'}
-        height={3}
-        options={{ showSpinner: false }}
+        height={10}
+        options={{ showSpinner: true }}
       />
-      <Layout>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </Layout>
+      <Component {...pageProps} />
       <ToastContainer />
     </QueryProvider>
   )

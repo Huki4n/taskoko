@@ -1,3 +1,5 @@
+@use '@/shared/styles/variables' as *;
+
 .size-s {
   font-size: 14px;
 }
@@ -29,4 +31,13 @@
 .transparent {
   opacity: 0.7;
   letter-spacing: 0.5px;
+}
+
+.error {
+  color: red;
+  padding-left: 0.5rem;
+}
+
+.link {
+  color: black;
 }

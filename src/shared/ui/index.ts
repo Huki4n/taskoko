@@ -1,4 +1,5 @@
-export { Layout } from './Layout/Layout'
+export { BaseLayout } from './Layout/BaseLayout/BaseLayout'
+export { AuthLayout } from './Layout/AuthLayout/AuthLayout'
 export { Icon } from './Icon/Icon'
 export { Input } from './Input/Input'
 export { P } from './P/P'

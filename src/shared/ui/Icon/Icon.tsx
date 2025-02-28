@@ -11,6 +11,7 @@ export const Icon = ({
   resizable = true,
   type = 'base',
   opacity,
+  onClick,
 }: IconProps) => {
   const [width, height] = Array.isArray(size)
     ? size
@@ -18,16 +19,18 @@ export const Icon = ({
 
   return (
     <Image
-      src={src}
+      src={`${src}.svg`}
       alt={alt}
       className={cn(
         resizable && s.size,
         s[type],
         s[`opacity${opacity}`],
+        onClick && s.clickable,
         s.icon
       )}
       width={width}
       height={height}
+      onClick={onClick}
     />
   )
 }
@@ -39,4 +42,5 @@ interface IconProps {
   resizable?: boolean
   opacity?: 30 | 70
   type?: 'base' | 'transparent'
+  onClick?: () => void
 }

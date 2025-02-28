@@ -1,0 +1,69 @@
+@use "@/shared/styles/variables" as *;
+
+
+.column {
+  --base-column-color: #9d66d5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: 3.5rem;
+  width: 100%;
+
+  border-radius: $base-border-radius;
+  border: 2px solid $blue;
+
+  &Header {
+    display: flex;
+    gap: 0.5rem;
+
+    width: 100%;
+  }
+
+  &Info {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &AdditionalInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &CountTasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: 100%;
+    background: var(--base-column-color);
+  }
+}
+
+.element {
+  position: relative;
+
+  height: 3.5rem;
+  width: 0.875rem;
+
+  top: -1.5px;
+  left: -1.5px;
+
+  //margin-left: -1px;
+
+  border-radius: $base-border-radius;
+
+  background-color: var(--base-column-color)
+}

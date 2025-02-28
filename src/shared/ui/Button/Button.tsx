@@ -7,20 +7,25 @@ import cn from 'classnames'
 import s from './Button.module.scss'
 
 export const Button = ({
-  type = 'default',
+  className = 'default',
+  type = 'button',
   icon,
   onClick,
   children,
+  cursor = 'pointer',
 }: ButtonProps) => {
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={cn(s.button, s[type])}
+      className={cn(s.button, s[className], s[cursor])}
     >
       {icon && (
         <Icon
-          src={`${ASSETS_ICON_PATH}/${icon.name}.svg`}
+          src={`${ASSETS_ICON_PATH}/${icon.name}`}
           size={icon.size}
+          opacity={icon.opacity}
+          clickable={icon.clickable}
         />
       )}
 
@@ -30,11 +35,15 @@ export const Button = ({
 }
 
 interface ButtonProps {
-  type?: 'default'
-  onClick: () => void
+  type?: 'button' | 'submit'
+  className?: 'default' | 'login' | 'register'
+  onClick?: () => void
   children?: ReactNode
+  cursor?: 'pointer' | 'cursorDefault'
   icon?: {
     name: string
     size: number | [number, number]
+    opacity?: 30 | 70
+    clickable?: boolean
   }
 }

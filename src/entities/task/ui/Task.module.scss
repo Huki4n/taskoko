@@ -1,0 +1,15 @@
+@use "@/shared/styles/variables" as *;
+
+
+.task {
+  --base-task-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  background: var(--base-task-color);
+  border-radius: $base-border-radius;
+
+  padding: 0.25rem 1rem;
+}

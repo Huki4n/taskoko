@@ -1,14 +1,66 @@
+@use '@/shared/styles/variables' as *;
+
 .button {
   display: flex;
   align-items: center;
   gap: 8px;
 
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+;
+}
+
+.default {
+  font-size: 18px;
+
   &:hover {
     opacity: 0.7;
   }
 }
 
-.default {
-  font-size: 18px;
+.auth-button {
+  display: flex;
+  justify-content: center;
+  max-width: 8rem;
+  width: 100%;
+
+  padding: 0.5rem 1rem;
+  border-radius: $base-border-radius;
+}
+
+.login {
+  @extend .auth-button;
+
+  color: white;
+  background: $orange;
+  border: 2px solid $orange;
+
+  &:hover {
+    background: darken($orange, 10%);
+    border: 2px solid darken($orange, 10%);
+  }
+}
+
+.register {
+  @extend .auth-button;
+
+  color: black;
+  outline: 2px solid $orange;
+
+  &:hover {
+    color: #494949;
+    outline: 2px solid darken($orange, 20%);
+  }
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+.cursorDefault {
+  cursor: auto;
+
+  &:hover {
+    opacity: 1;
+  }
 }

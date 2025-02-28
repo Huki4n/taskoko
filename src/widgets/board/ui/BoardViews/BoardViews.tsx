@@ -10,7 +10,7 @@ export const BoardViews = () => {
       {boardViews.map((view, index) => (
         <li key={index} className={s.viewItem}>
           <Icon
-            src={`${ASSETS_ICON_PATH}/${view.icon}.svg`}
+            src={`${ASSETS_ICON_PATH}/${view.icon}`}
             size={26}
           />
           <P type={'bold'}>{view.label}</P>

@@ -1,3 +1,10 @@
-export default function Login() {
-  return <h1>Login</h1>
+import { AuthLayout } from '@/shared/ui'
+import { Login } from '@/widgets/auth'
+
+export default function LoginPage() {
+  return (
+    <AuthLayout>
+      <Login />
+    </AuthLayout>
+  )
 }

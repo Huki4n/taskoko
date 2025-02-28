@@ -1,6 +1,12 @@
 @use '@/shared/styles/variables' as *;
+@use '@/shared/styles/breakpoints' as *;
 
 .user {
+  --block-size: 110px;
+
+  max-height: var(--block-size);
+  height: 100%;
+
   display: flex;
   align-items: center;
   gap: 16px;
@@ -9,8 +15,12 @@
 }
 
 .leftSide {
-  --block-size: 110px;
   --second-line-size: 100px;
+
+  @include small-laptop{
+    --block-size: 90px;
+    --second-line-size: 80px;
+  }
 
   display: flex;
   align-items: center;
@@ -19,8 +29,8 @@
   max-width: var(--block-size);
   max-height: var(--block-size);
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   position: relative;
 
@@ -50,10 +60,19 @@
     border: 2px solid $blue;
     border-radius: 100%;
   }
+
+  & img {
+    padding: 17.5px 17.5px 17.5px 19.5px;
+    cursor: auto;
+  }
 }
 
 .rightSide {
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  & p {
+    cursor: text;
+  }
 }

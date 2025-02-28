@@ -1,4 +1,6 @@
+import { P } from '@/shared/ui'
 import { FieldMeta, Updater } from '@tanstack/form-core'
+import cn from 'classnames'
 
 import s from './Input.module.scss'
 
@@ -8,15 +10,22 @@ export const Input = ({
   value,
   onChange,
   onBlur,
-  meta,
+  error,
   label,
   placeholder,
-  className = 'base',
+  className = 'auth',
   size,
 }: InputProps) => {
   return (
     <>
-      {label && <label htmlFor={''}>{label}</label>}
+      {label && (
+        <label
+          htmlFor={name}
+          className={cn(s[`label-${className}`], s.label)}
+        >
+          {label}
+        </label>
+      )}
       <input
         id={name}
         name={name}
@@ -25,14 +34,14 @@ export const Input = ({
         onBlur={onBlur}
         onChange={event => onChange(event.target.value)}
         placeholder={placeholder}
-        className={s[className]}
+        className={cn(s[className], s.input)}
         autoComplete={className === 'search' ? 'off' : 'on'}
         size={size}
       />
-      {meta.isTouched && meta.errorMap['onChange'] && (
-        <p style={{ color: 'red' }}>
-          {meta.errorMap['onChange']}
-        </p>
+      {error.isTouched && error.errorMap['onChange'] && (
+        <P type={'error'} size={'s'}>
+          {error.errorMap['onChange']}
+        </P>
       )}
     </>
   )
@@ -44,10 +53,10 @@ interface InputProps {
   value: string | number
   onChange: (updater: Updater<string>) => void
   onBlur?: () => void
-  meta: FieldMeta
+  error: FieldMeta
 
   label?: string
   placeholder?: string
-  className?: 'base' | 'search'
+  className?: 'auth' | 'search'
   size?: number
 }

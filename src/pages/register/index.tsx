@@ -1,7 +1,10 @@
-export default function Register() {
+import { AuthLayout } from '@/shared/ui'
+import { Register } from '@/widgets/auth'
+
+export default function RegisterPage() {
   return (
-    <div>
-      <h1>Register</h1>
-    </div>
+    <AuthLayout>
+      <Register />
+    </AuthLayout>
   )
 }

@@ -35,7 +35,7 @@ export const Search = () => {
         }}
       >
         <Icon
-          src={`${ASSETS_ICON_PATH}/search_icon.svg`}
+          src={`${ASSETS_ICON_PATH}/search_icon`}
           alt={'Search'}
           size={18}
           opacity={30}
@@ -48,7 +48,7 @@ export const Search = () => {
               value={field.state.value}
               onChange={field.handleChange}
               onBlur={field.handleBlur}
-              meta={field.state.meta}
+              error={field.state.meta}
               className={'search'}
               placeholder={'Search by name or by tag'}
               size={25}

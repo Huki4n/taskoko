@@ -30,7 +30,12 @@ export const P = ({
 }
 
 interface ParagraphProps {
-  type?: 'default' | 'bold' | 'transparent'
+  type?:
+    | 'default'
+    | 'bold'
+    | 'transparent'
+    | 'error'
+    | 'link'
   size?: 's' | 'm' | '18' | 'l' | 'xl'
   children: ReactNode
 }
