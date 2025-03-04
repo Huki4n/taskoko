@@ -1,0 +1,29 @@
+
+.taskList {
+  --last-visible-item: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  max-height: 535px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    /* ширина скроллбара */
+  }
+
+}
+
+.taskListEditable {
+  position: absolute;
+  top: 64px;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}

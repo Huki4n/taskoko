@@ -4,7 +4,7 @@ export interface IUser {
   id: string
   name: string
   email: string
-  avatar_url: string
+  avatarUrl: string
   projects: IProject[]
 }
 
@@ -17,5 +17,5 @@ export interface IProject {
 
 export type IAssignee = Pick<
   IUser,
-  'id' | 'name' | 'avatar_url'
+  'id' | 'name' | 'avatarUrl'
 >

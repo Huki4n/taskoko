@@ -25,7 +25,7 @@ export const Button = ({
           src={`${ASSETS_ICON_PATH}/${icon.name}`}
           size={icon.size}
           opacity={icon.opacity}
-          clickable={icon.clickable}
+          onClick={() => {}}
         />
       )}
 

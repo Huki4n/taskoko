@@ -9,6 +9,7 @@ export const Icon = ({
   size,
   alt = '',
   resizable = true,
+  rotate,
   type = 'base',
   opacity,
   onClick,
@@ -24,6 +25,7 @@ export const Icon = ({
       className={cn(
         resizable && s.size,
         s[type],
+        s[`rotate-${rotate}`],
         s[`opacity${opacity}`],
         onClick && s.clickable,
         s.icon
@@ -41,6 +43,7 @@ interface IconProps {
   alt?: string
   resizable?: boolean
   opacity?: 30 | 70
+  rotate?: '90'
   type?: 'base' | 'transparent'
   onClick?: () => void
 }

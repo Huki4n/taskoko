@@ -1,0 +1,30 @@
+@use "@/shared/styles/variables" as *;
+
+
+.task {
+  --base-task-color: #ffffff;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  background: var(--base-task-color);
+  border-radius: $base-border-radius;
+
+  padding: 0.75rem 1.25rem 1rem 1rem;
+
+  transition: opacity 0.2s ease-in-out, width 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+.taskEditable {
+  width: 100%;
+}
+
+.visible {
+  opacity: 0.5;
+}
+

@@ -36,6 +36,6 @@ interface ParagraphProps {
     | 'transparent'
     | 'error'
     | 'link'
-  size?: 's' | 'm' | '18' | 'l' | 'xl'
+  size?: 'xss' | 'xs' | '13' | 's' | 'm' | '18' | 'l' | 'xl'
   children: ReactNode
 }

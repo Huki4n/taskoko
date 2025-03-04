@@ -20,7 +20,10 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-1', name: 'Alice', avatar_url: '' },
+          { id: 'user-1', name: 'Alice', avatarUrl: '' },
+          { id: 'user-15', name: 'Alice', avatarUrl: '' },
+          { id: 'user-16', name: 'Alice', avatarUrl: '' },
+          { id: 'user-17', name: 'Alice', avatarUrl: '' },
         ],
       },
       {
@@ -37,7 +40,75 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-2', name: 'Bob', avatar_url: '' },
+          { id: 'user-2', name: 'Bob', avatarUrl: '' },
+        ],
+      },
+      {
+        id: 'task-3',
+        name: 'Design login page',
+        type: 'design',
+        description:
+          'Create a wireframe for the login page.',
+        tags: ['design', 'UI'],
+        timer: '00:00',
+        image: '',
+        subtasks: [],
+        attachments: [],
+        comments: [],
+        isDone: false,
+        users: [
+          { id: 'user-12', name: 'Bob', avatarUrl: '' },
+        ],
+      },
+      {
+        id: 'task-4',
+        name: 'Design login page',
+        type: 'design',
+        description:
+          'Create a wireframe for the login page.',
+        tags: ['design', 'UI'],
+        timer: '00:00',
+        image: '',
+        subtasks: [],
+        attachments: [],
+        comments: [],
+        isDone: false,
+        users: [
+          { id: 'user-12', name: 'Bob', avatarUrl: '' },
+        ],
+      },
+      {
+        id: 'task-5',
+        name: 'Design login page',
+        type: 'design',
+        description:
+          'Create a wireframe for the login page.',
+        tags: ['design', 'UI'],
+        timer: '00:00',
+        image: '',
+        subtasks: [],
+        attachments: [],
+        comments: [],
+        isDone: false,
+        users: [
+          { id: 'user-12', name: 'Bob', avatarUrl: '' },
+        ],
+      },
+      {
+        id: 'task-6',
+        name: 'Design login page',
+        type: 'design',
+        description:
+          'Create a wireframe for the login page.',
+        tags: ['design', 'UI'],
+        timer: '00:00',
+        image: '',
+        subtasks: [],
+        attachments: [],
+        comments: [],
+        isDone: false,
+        users: [
+          { id: 'user-12', name: 'Bob', avatarUrl: '' },
         ],
       },
     ],
@@ -48,7 +119,7 @@ export const mockColumns: IColumn[] = [
     color: '#3361ff',
     tasks: [
       {
-        id: 'task-3',
+        id: 'task-7',
         name: 'Develop authentication logic',
         type: 'backend',
         description:
@@ -61,11 +132,11 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-3', name: 'Charlie', avatar_url: '' },
+          { id: 'user-3', name: 'Charlie', avatarUrl: '' },
         ],
       },
       {
-        id: 'task-4',
+        id: 'task-8',
         name: 'Create database schema',
         type: 'database',
         description:
@@ -78,7 +149,7 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-4', name: 'David', avatar_url: '' },
+          { id: 'user-4', name: 'David', avatarUrl: '' },
         ],
       },
     ],
@@ -89,7 +160,7 @@ export const mockColumns: IColumn[] = [
     color: '#ffcd43',
     tasks: [
       {
-        id: 'task-5',
+        id: 'task-9',
         name: 'Code review for authentication module',
         type: 'review',
         description:
@@ -102,11 +173,11 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-5', name: 'Eve', avatar_url: '' },
+          { id: 'user-5', name: 'Eve', avatarUrl: '' },
         ],
       },
       {
-        id: 'task-6',
+        id: 'task-10',
         name: 'Check UI responsiveness',
         type: 'testing',
         description:
@@ -119,7 +190,7 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-6', name: 'Frank', avatar_url: '' },
+          { id: 'user-6', name: 'Frank', avatarUrl: '' },
         ],
       },
     ],
@@ -130,7 +201,7 @@ export const mockColumns: IColumn[] = [
     color: '#98db7c',
     tasks: [
       {
-        id: 'task-7',
+        id: 'task-11',
         name: 'Create project roadmap',
         type: 'planning',
         description:
@@ -143,11 +214,11 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-7', name: 'Grace', avatar_url: '' },
+          { id: 'user-7', name: 'Grace', avatarUrl: '' },
         ],
       },
       {
-        id: 'task-8',
+        id: 'task-12',
         name: 'Deploy initial version',
         type: 'deployment',
         description:
@@ -160,7 +231,7 @@ export const mockColumns: IColumn[] = [
         comments: [],
         isDone: false,
         users: [
-          { id: 'user-8', name: 'Henry', avatar_url: '' },
+          { id: 'user-8', name: 'Henry', avatarUrl: '' },
         ],
       },
     ],

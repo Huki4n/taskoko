@@ -6,20 +6,21 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
 
-  height: 3.5rem;
   width: 100%;
 
-  border-radius: $base-border-radius;
-  border: 2px solid $blue;
 
   &Header {
     display: flex;
     gap: 0.5rem;
 
     width: 100%;
+
+    height: 3.5rem;
+    border-radius: $base-border-radius;
+    border: 2px solid $blue;
   }
 
   &Info {
@@ -67,3 +68,4 @@
 
   background-color: var(--base-column-color)
 }
+

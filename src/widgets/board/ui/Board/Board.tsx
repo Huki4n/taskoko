@@ -1,12 +1,14 @@
 'use client'
 
+import { memo } from 'react'
+
 import { BoardContent } from '../BoardContent/BoardContent'
 import { BoardUsers } from '../BoardUsers/BoardUsers'
 import { BoardViews } from '../BoardViews/BoardViews'
 
 import s from './Board.module.scss'
 
-export const Board = () => {
+export const Board = memo(() => {
   return (
     <section className={s.board}>
       <div className={s.boardHeader}>
@@ -17,4 +19,6 @@ export const Board = () => {
       <BoardContent />
     </section>
   )
-}
+})
+
+Board.displayName = 'Board'

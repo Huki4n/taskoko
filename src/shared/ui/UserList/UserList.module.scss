@@ -1,43 +1,64 @@
 @use "@/shared/styles/variables" as *;
 
-.boardUsers {
+.users {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
 }
 
 .userList {
   display: flex;
+  justify-content: flex-end;
+
+  flex-grow: 1;
 }
 
-.userItem {
-  max-height: 2.5rem;
-  max-width: 2.5rem;
-  width: 100%;
+.itemBase {
   aspect-ratio: 1;
-
   cursor: pointer;
-
   padding: 4px;
+
 
   background: black;
   border: 2px solid white;
   border-radius: 100%;
-
-  margin-left: -0.6rem;
 }
 
+.userItem {
+  @extend .itemBase;
+
+  max-height: 2.5rem;
+  max-width: 2.5rem;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  margin-left: -0.6rem;
+
+
+  &Task {
+    @extend .itemBase;
+
+    max-height: 1.875rem;
+    max-width: 1.875rem;
+
+    width: 1.825rem;
+    height: 1.825rem;
+
+    margin-left: -0.5rem;
+  }
+}
+
+
 .moreCountUsers {
+  @extend .itemBase;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: black;
   border: 2px solid $blue;
-
-  margin-left: -0.6rem;
-  aspect-ratio: 1;
 
   & p {
     color: $blue

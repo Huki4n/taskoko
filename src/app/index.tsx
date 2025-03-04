@@ -20,11 +20,11 @@ export default function MyApp({
         />
         <link
           rel={'prefetch'}
-          href={'http://localhost:8080'}
+          href={'http://localhost:8080/api/message'}
         />
         <link
           rel={'preconnect'}
-          href={'http://localhost:8080'}
+          href={'http://localhost:8080/api/message'}
         />
       </Head>
       <NextNProgress

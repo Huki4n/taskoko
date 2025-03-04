@@ -1,5 +1,6 @@
 import { IAssignee } from '@/entities/user'
 
+// GLOBAL TYPES
 export interface ITask {
   id: string
   name: string
@@ -32,4 +33,22 @@ export interface IComment {
   text: string
   createdAt: string
   authorId: string
+}
+
+// UI COMPONENT TYPES
+export interface TaskProps {
+  task: ITask
+  color: string
+  dataIndex: number
+  visibility: boolean | undefined
+  columnId: string
+}
+
+export type BaseTaskProps = {
+  task: ITask
+  editTask: () => void
+}
+
+export type TaskImageProps = Pick<ITask, 'image'> & {
+  type: 'edit' | 'base'
 }
