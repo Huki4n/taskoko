@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, useState } from 'react'
 
 import {
   TaskProps,
@@ -18,25 +18,30 @@ export const Task = ({
   visibility,
   columnId,
 }: TaskProps) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   const { editTaskId, taskSize, setEditTaskId } =
     useEditTaskStore()
   const isEditTask = editTaskId === task.id
 
+  if (isEditTask && !isExpanded) {
+    setTimeout(() => setIsExpanded(true))
+  }
+
   const editTask = () => setEditTaskId(task.id, columnId)
 
   return (
-    <li
+    <div
       className={cn(
         s.task,
         isEditTask && s.taskEditable,
+        isExpanded && s.expanded,
         visibility && s.visible
       )}
       style={
         {
           '--base-task-color': color,
-          width: isEditTask
-            ? `calc(100% - ${taskSize?.width}px - 16px)`
-            : taskSize?.width,
+          width: !isEditTask && taskSize?.width,
         } as CSSProperties
       }
       data-index={dataIndex}
@@ -46,6 +51,6 @@ export const Task = ({
       ) : (
         <BaseTask task={task} editTask={editTask} />
       )}
-    </li>
+    </div>
   )
 }

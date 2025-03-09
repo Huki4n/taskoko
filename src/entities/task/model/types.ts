@@ -27,12 +27,13 @@ export interface ISubtask {
 export interface IAttachment {
   id: string
   fileUrl: string
+  fileName: string
 }
 
 export interface IComment {
   text: string
   createdAt: string
-  authorId: string
+  author: IAssignee
 }
 
 // UI COMPONENT TYPES
@@ -51,4 +52,10 @@ export type BaseTaskProps = {
 
 export type TaskImageProps = Pick<ITask, 'image'> & {
   type: 'edit' | 'base'
+}
+
+export interface TaskAdditionalInfoProps {
+  subtasks: ISubtask[]
+  comments: IComment[]
+  attachments: IAttachment[]
 }

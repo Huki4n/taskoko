@@ -16,115 +16,148 @@ import cn from 'classnames'
 import s from './TaskListBlur.module.scss'
 
 export const TaskListBlur = memo(
-  ({ tasks, color, columnId }: TaskListProps) => {
-    const { editColumnId } = useEditTaskStore()
+  ({
+    tasks,
+    color,
+    columnId,
+    columnIndex,
+  }: TaskListProps) => {
+    const { editColumnId, editTaskId } = useEditTaskStore()
     const isEditColumn = editColumnId === columnId
 
-    const containerRef = useRef<HTMLUListElement>(null)
+    const listRef = useRef<HTMLUListElement>(null)
+    const [maskTop, setMaskTop] = useState(false)
+    const [maskBottom, setMaskBottom] = useState(false)
     const [
       partiallyVisibleItems,
       setPartiallyVisibleItems,
     ] = useState<Set<number> | null>(null)
 
-    // Мемоизация для IntersectionObserver callback
-    const observerCallback = useCallback(
-      (entries: IntersectionObserverEntry[]) => {
-        const newPartiallyVisibleItems = new Set<number>()
-
-        entries.forEach(entry => {
-          if (
-            entry.intersectionRatio > 0 &&
-            entry.intersectionRatio < 1
-          ) {
-            const index = Number(
-              entry.target.getAttribute('data-index')
-            )
-
-            newPartiallyVisibleItems.add(index)
-          }
-        })
-
-        setPartiallyVisibleItems(newPartiallyVisibleItems)
-      },
-      []
-    )
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        observerCallback,
-        {
-          root: containerRef.current,
-          threshold: [0, 0.25, 0.5, 0.75, 1],
-        }
-      )
-
-      const listItems = containerRef.current?.children
-
-      if (listItems) {
-        Array.from(listItems).forEach(item =>
-          observer.observe(item)
-        )
-      }
-
-      return () => {
-        if (listItems) {
-          Array.from(listItems).forEach(item =>
-            observer.unobserve(item)
-          )
-        }
-      }
-    }, [observerCallback, tasks]) // добавлен observerCallback как зависимость
+    // // Мемоизация для IntersectionObserver callback
+    // const observerCallback = useCallback(
+    //   (entries: IntersectionObserverEntry[]) => {
+    //     const newPartiallyVisibleItems = new Set<number>()
+    //
+    //     entries.forEach(entry => {
+    //       console.log(entry)
+    //
+    //       if (
+    //         entry.intersectionRatio > 0 &&
+    //         entry.intersectionRatio < 1
+    //       ) {
+    //         const index = Number(
+    //           entry.target.getAttribute('data-index')
+    //         )
+    //
+    //         newPartiallyVisibleItems.add(index)
+    //       }
+    //     })
+    //
+    //     setPartiallyVisibleItems(newPartiallyVisibleItems)
+    //   },
+    //   []
+    // )
+    //
+    // useEffect(() => {
+    //   const observer = new IntersectionObserver(
+    //     observerCallback,
+    //     {
+    //       root: listRef.current,
+    //       threshold: [0, 1],
+    //     }
+    //   )
+    //
+    //   const listItems = listRef.current?.children
+    //
+    //   if (listItems) {
+    //     Array.from(listItems).forEach(item =>
+    //       observer.observe(item)
+    //     )
+    //   }
+    //
+    //   return () => {
+    //     if (listItems) {
+    //       Array.from(listItems).forEach(item =>
+    //         observer.unobserve(item)
+    //       )
+    //     }
+    //   }
+    // }, [observerCallback, tasks]) // добавлен observerCallback как зависимость
 
     // Мемоизация для handleScroll
     const handleScroll = useCallback(() => {
-      const container = containerRef.current
+      if (!listRef.current) return
+      const { scrollTop, scrollHeight, clientHeight } =
+        listRef.current
 
-      if (container) {
-        const { scrollTop, scrollHeight, clientHeight } =
-          container
-
-        if (scrollTop + clientHeight >= scrollHeight - 10) {
-          console.log('null')
-          setPartiallyVisibleItems(null)
-        }
-      }
-    }, []) // handleScroll не зависит от состояния или пропсов
+      setMaskTop(scrollTop > 0)
+      setMaskBottom(
+        scrollTop + clientHeight < scrollHeight - 10
+      )
+    }, [])
 
     useEffect(() => {
-      const container = containerRef.current
+      const list = listRef.current
 
-      container?.addEventListener('scroll', handleScroll, {
+      list?.addEventListener('scroll', handleScroll, {
         passive: true,
       })
+      handleScroll()
 
       return () => {
-        container?.removeEventListener(
-          'scroll',
-          handleScroll
-        )
+        list?.removeEventListener('scroll', handleScroll)
       }
-    }, [handleScroll]) // добавлен handleScroll как зависимость
+    }, [handleScroll])
 
     return (
-      <ul
-        className={cn(
-          isEditColumn && s.taskListEditable,
-          s.taskList
-        )}
-        ref={containerRef}
+      <div
+        className={cn(isEditColumn && s.taskListEditable)}
       >
-        {(isEditColumn || editColumnId === '') &&
-          tasks.map((task, index) => (
+        {editColumnId === columnId && editTaskId && (
+          <div className={s.editTaskBlock}>
             <Task
-              key={task.id}
-              task={task}
+              key={editTaskId}
+              task={
+                tasks.find(task => task.id === editTaskId)!
+              }
               color={color}
-              dataIndex={index}
-              visibility={partiallyVisibleItems?.has(index)}
               columnId={columnId}
+              dataIndex={1000}
+              visibility={undefined}
             />
-          ))}
-      </ul>
+          </div>
+        )}
+
+        <div className={s.listContainer}>
+          <ul className={s.taskList} ref={listRef}>
+            {(isEditColumn || editColumnId === '') &&
+              tasks
+                .filter(task => task.id !== editTaskId)
+                .map((task, index) => (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    color={color}
+                    dataIndex={columnIndex * 100 + index}
+                    visibility={partiallyVisibleItems?.has(
+                      columnIndex * 100 + index
+                    )}
+                    columnId={columnId}
+                  />
+                ))}
+          </ul>
+
+          <div
+            className={cn(s.maskTop, maskTop && s.show)}
+          />
+          <div
+            className={cn(
+              s.maskBottom,
+              maskBottom && s.show
+            )}
+          />
+        </div>
+      </div>
     )
   }
 )
@@ -135,4 +168,5 @@ interface TaskListProps {
   tasks: ITask[]
   color: string
   columnId: string
+  columnIndex: number
 }

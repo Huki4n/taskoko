@@ -13,12 +13,18 @@ export const Button = ({
   onClick,
   children,
   cursor = 'pointer',
+  fontSize = 18,
 }: ButtonProps) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={cn(s.button, s[className], s[cursor])}
+      className={cn(
+        s.button,
+        s[className],
+        s[cursor],
+        s[`font-size-${fontSize}`]
+      )}
     >
       {icon && (
         <Icon
@@ -46,4 +52,5 @@ interface ButtonProps {
     opacity?: 30 | 70
     clickable?: boolean
   }
+  fontSize?: 14 | 15 | 16 | 18
 }

@@ -1,7 +1,11 @@
 .icons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 0.25rem;
+
+  max-width: 250px;
 
   .icon {
     display: flex;
@@ -10,6 +14,10 @@
 
     &:nth-child(2) img{
       margin-top: 2px;
+    }
+
+    &:last-child {
+      cursor: pointer;
     }
   }
 }

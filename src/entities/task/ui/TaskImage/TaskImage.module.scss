@@ -1,7 +1,19 @@
+@use '@/shared/styles/variables' as *;
+
+.base {
+  background: black;
+  border: 2px solid $blue;
+  border-radius: $base-border-radius;
+}
+
 .imageBasePlaceholder {
+  @extend .base;
+
   padding: 64px 80px;
 }
 
 .imageEditPlaceholder {
+  @extend .base;
+
   padding: 45px 90px 30px 90px;
 }

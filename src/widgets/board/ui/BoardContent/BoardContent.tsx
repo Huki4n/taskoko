@@ -10,8 +10,12 @@ export const BoardContent = memo(() => {
   return (
     <section className={s.boardContent}>
       <ul className={s.columnList}>
-        {mockColumns.map(column => (
-          <Column key={column.id} column={column} />
+        {mockColumns.map((column, index) => (
+          <Column
+            key={column.id}
+            column={column}
+            columnIndex={index}
+          />
         ))}
       </ul>
     </section>

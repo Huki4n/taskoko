@@ -6,3 +6,14 @@ export interface IColumn {
   color: string
   tasks: ITask[]
 }
+
+// COMPONENT TYPES
+export interface ColumnProps {
+  column: IColumn
+  columnIndex: number
+}
+
+export interface ColumnInfoProps {
+  name: string
+  countTasks: number
+}

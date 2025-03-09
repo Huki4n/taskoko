@@ -5,8 +5,7 @@
   align-items: center;
   gap: 8px;
 
-  transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-;
+  transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;;
 }
 
 .default {
@@ -63,4 +62,21 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-15 {
+  font-size: 15px;
+}
+
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 18px;
 }

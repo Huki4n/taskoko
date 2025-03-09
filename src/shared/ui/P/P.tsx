@@ -14,6 +14,7 @@ const saira = Saira({
 export const P = ({
   type = 'default',
   size = 'm',
+  color = 'white',
   children,
 }: ParagraphProps) => {
   return (
@@ -21,6 +22,7 @@ export const P = ({
       className={cn(
         s[`size-${size}`],
         s[type],
+        s[`color-${color}`],
         type === 'bold' && saira.className
       )}
     >
@@ -36,6 +38,16 @@ interface ParagraphProps {
     | 'transparent'
     | 'error'
     | 'link'
-  size?: 'xss' | 'xs' | '13' | 's' | 'm' | '18' | 'l' | 'xl'
+  size?:
+    | 'xss'
+    | 'xs'
+    | '13'
+    | 's'
+    | '15'
+    | 'm'
+    | '18'
+    | 'l'
+    | 'xl'
+  color?: 'white' | 'black'
   children: ReactNode
 }
