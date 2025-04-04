@@ -113,7 +113,12 @@ export const RegisterForm = () => {
           <P type={'error'}>{error}</P>
         </div>
       )}
-      <Button type={'submit'} className={'login'}>
+      <Button
+        type={'submit'}
+        className={'outline'}
+        typeButton={'auth'}
+        fontSize={16}
+      >
         Sign up
       </Button>
     </form>

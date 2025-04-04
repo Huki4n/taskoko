@@ -1,5 +1,5 @@
 import { Navigation } from '../Navigation/Navigation'
-import { Projects } from '../Projects/Projects'
+import { Projects } from '../ProjectsList/ProjectsList'
 import { User } from '../User/User'
 
 import s from './Sidebar.module.scss'

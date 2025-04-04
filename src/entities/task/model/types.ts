@@ -36,6 +36,34 @@ export interface IComment {
   author: IAssignee
 }
 
+// API TYPES
+
+// TODO: write right types
+export interface ITaskEditRequest {
+  tags: string[]
+  timer: string
+  image: string
+  subtasks: ISubtask[]
+  attachments: IAttachment[]
+  comments: IComment[]
+  users: IAssignee[]
+  isDone: boolean
+}
+
+export interface ITaskCreateRequest {
+  name: string
+  type: string
+  description: string
+  tags: string[]
+  timer: string
+  image: string
+  subtasks: ISubtask[]
+  attachments: IAttachment[]
+  comments: IComment[]
+  users: IAssignee[]
+}
+
+
 // UI COMPONENT TYPES
 export interface TaskProps {
   task: ITask
@@ -45,9 +73,10 @@ export interface TaskProps {
   columnId: string
 }
 
-export type BaseTaskProps = {
+export type BaseTaskEditProps = {
   task: ITask
   editTask: () => void
+  // type: 'base' | 'edit'
 }
 
 export type TaskImageProps = Pick<ITask, 'image'> & {

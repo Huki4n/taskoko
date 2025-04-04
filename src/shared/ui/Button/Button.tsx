@@ -14,6 +14,7 @@ export const Button = ({
   children,
   cursor = 'pointer',
   fontSize = 18,
+  typeButton=''
 }: ButtonProps) => {
   return (
     <button
@@ -23,7 +24,8 @@ export const Button = ({
         s.button,
         s[className],
         s[cursor],
-        s[`font-size-${fontSize}`]
+        s[`font-size-${fontSize}`],
+        s[`${typeButton}-button`]
       )}
     >
       {icon && (
@@ -42,7 +44,8 @@ export const Button = ({
 
 interface ButtonProps {
   type?: 'button' | 'submit'
-  className?: 'default' | 'login' | 'register'
+  className?: 'default' | 'full' | 'outline'
+  typeButton?: 'auth' | 'submit'
   onClick?: () => void
   children?: ReactNode
   cursor?: 'pointer' | 'cursorDefault'

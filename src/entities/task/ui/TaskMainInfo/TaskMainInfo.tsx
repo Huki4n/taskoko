@@ -1,4 +1,4 @@
-import { BaseTaskProps } from '@/entities/task'
+import { BaseTaskEditProps } from '@/entities/task'
 import { TaskIcons } from '@/entities/task/ui/TaskIcons/TaskIcons'
 import { ASSETS_ICON_PATH } from '@/shared/api/base-url'
 import { Icon, P, UserList } from '@/shared/ui'
@@ -8,7 +8,7 @@ import s from './TaskMainInfo.module.scss'
 export const TaskMainInfo = ({
   task,
   editTask,
-}: BaseTaskProps) => {
+}: BaseTaskEditProps) => {
   return (
     <>
       <div className={s.assignee}>
@@ -32,16 +32,7 @@ export const TaskMainInfo = ({
       {task.description && (
         <P size={'s'}>{task.description}</P>
       )}
-
-      <div className={s.editButton}>
-        <Icon
-          src={`${ASSETS_ICON_PATH}/dots`}
-          size={16}
-          rotate={'90'}
-          onClick={editTask}
-        />
-      </div>
-
+  
       <div className={s.additionalInfo}>
         {task.tags?.length > 0 && (
           <ul className={s.tags}>
@@ -56,6 +47,15 @@ export const TaskMainInfo = ({
         )}
 
         <TaskIcons task={task} />
+      </div>
+
+      <div className={s.editButton}>
+        <Icon
+          src={`${ASSETS_ICON_PATH}/dots`}
+          size={16}
+          rotate={'90'}
+          onClick={editTask}
+        />
       </div>
     </>
   )

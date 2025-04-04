@@ -1,18 +1,20 @@
 @use '@/shared/styles/variables' as *;
 
-
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
+  color: white; 
 
-.inputs {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 550px;
+  height: 150px;
+
+  padding: 2rem;
+
+  border-radius: $base-border-radius;
+  background-color: $bg;
 }
 
 .input {
@@ -20,17 +22,9 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  width: 28rem;
-
   & input {
     padding: 0.5rem 1rem;
     border: 2px solid $purple;
     border-radius: $base-border-radius;
   }
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
 }

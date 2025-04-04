@@ -21,6 +21,7 @@ export const BaseLayout = ({ children }: LayoutProps) => {
         <Sidebar />
         <main className={s.main}>{children}</main>
       </div>
+      <div id={'portal'}></div>
     </div>
   )
 }

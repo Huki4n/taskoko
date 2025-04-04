@@ -1,4 +1,4 @@
-import { IColumn } from '@/entities/column'
+import { IProject } from '@/entities/project'
 
 export interface IUser {
   id: string
@@ -6,13 +6,6 @@ export interface IUser {
   email: string
   avatarUrl: string
   projects: IProject[]
-}
-
-export interface IProject {
-  id: string
-  name: string
-  columns: IColumn[]
-  users: IAssignee[]
 }
 
 export type IAssignee = Pick<

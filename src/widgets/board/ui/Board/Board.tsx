@@ -1,6 +1,11 @@
 'use client'
 
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
+
+import {
+  useGetProject,
+  useProjectsStore,
+} from '@/entities/project'
 
 import { BoardContent } from '../BoardContent/BoardContent'
 import { BoardUsers } from '../BoardUsers/BoardUsers'

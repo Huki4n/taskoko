@@ -79,7 +79,12 @@ export const LoginForm = () => {
           </loginForm.Field>
         </div>
       </div>
-      <Button type={'submit'} className={'login'}>
+      <Button
+        type={'submit'}
+        className={'full'}
+        fontSize={16}
+        typeButton={'auth'}
+      >
         Continue
       </Button>
     </form>

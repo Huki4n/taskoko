@@ -2,10 +2,10 @@ export type {
   ITask,
   ISubtask,
   IAttachment,
-  BaseTaskProps,
+  BaseTaskEditProps,
   TaskProps,
   TaskImageProps,
   TaskAdditionalInfoProps,
 } from './model/types'
-export { useEditTaskStore } from './model/taskStore'
+export { useEditTaskStore } from './model/editTaskStore'
 export { Task } from './ui/Task/Task'

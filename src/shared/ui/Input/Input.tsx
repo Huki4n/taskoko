@@ -13,6 +13,7 @@ export const Input = ({
   error,
   label,
   placeholder,
+  textColor='black',
   className = 'auth',
   size,
 }: InputProps) => {
@@ -21,7 +22,7 @@ export const Input = ({
       {label && (
         <label
           htmlFor={name}
-          className={cn(s[`label-${className}`], s.label)}
+          className={cn(s[`label-${className}`], s[textColor] , s.label)}
         >
           {label}
         </label>
@@ -34,7 +35,7 @@ export const Input = ({
         onBlur={onBlur}
         onChange={event => onChange(event.target.value)}
         placeholder={placeholder}
-        className={cn(s[className], s.input)}
+        className={cn(s[className], s.input, s[textColor])}
         autoComplete={className === 'search' ? 'off' : 'on'}
         size={size}
       />
@@ -55,6 +56,7 @@ interface InputProps {
   onBlur?: () => void
   error: FieldMeta
 
+  textColor?: 'white' | 'black',
   label?: string
   placeholder?: string
   className?: 'auth' | 'search'

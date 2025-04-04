@@ -26,9 +26,19 @@
   border-radius: $base-border-radius;
 }
 
-.login {
-  @extend .auth-button;
+.submit-button {
+  margin: 0 auto;
 
+  display: flex;
+  justify-content: center;
+  width: 60%;
+
+  padding: 0.25rem 1rem;
+  border-radius: $base-border-radius;
+}
+
+
+.full {
   color: white;
   background: $orange;
   border: 2px solid $orange;
@@ -39,9 +49,7 @@
   }
 }
 
-.register {
-  @extend .auth-button;
-
+.outline {
   color: black;
   outline: 2px solid $orange;
 
@@ -71,7 +79,6 @@
 .font-size-15 {
   font-size: 15px;
 }
-
 
 .font-size-16 {
   font-size: 16px;

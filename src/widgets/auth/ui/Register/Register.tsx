@@ -11,7 +11,7 @@ export const Register = () => {
   return (
     <div className={s.auth}>
       <RegisterForm />
-      <P type={'link'} size={'s'}>
+      <P type={'link'} size={'s'} color={'black'}>
         Already have an account?{' '}
         <Link href={'/login'} className={s.link}>
           Log in
